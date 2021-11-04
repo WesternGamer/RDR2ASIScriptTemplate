@@ -43,7 +43,7 @@ void Main()
 
 void Update() 
 {
-	HUD::_DISABLE_REDUCE_TIME_SCALE_WHILE_MENU_IS_OPEN();
+	
 }
 
 void Dispose() 
