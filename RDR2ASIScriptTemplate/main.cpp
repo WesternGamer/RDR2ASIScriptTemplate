@@ -29,7 +29,7 @@ BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
 
 void Main() 
 {
-
+	
 #pragma region DoNotTouch
 	// Add your code above this code.
 	srand(GetTickCount64());
@@ -43,10 +43,10 @@ void Main()
 
 void Update() 
 {
-	HUD::_DISABLE_REDUCE_TIME_SCALE_WHILE_MENU_IS_OPEN();
+	
 }
 
 void Dispose() 
 {
-
+	
 }

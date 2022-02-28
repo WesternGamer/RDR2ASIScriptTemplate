@@ -42,7 +42,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\$(MSBuildProjectName)</OutDir>
+    <OutDir>D:\Games\steamapps\common\Red Dead Redemption 2</OutDir>
     <IntDir>temp\$(Configuration)\</IntDir>
     <TargetExt>.asi</TargetExt>
   </PropertyGroup>
