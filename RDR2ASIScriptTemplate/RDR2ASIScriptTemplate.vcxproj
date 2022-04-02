@@ -7,12 +7,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pools.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enums.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="nativeCaller.h" />
+    <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Pools.h" />
+    <ClInclude Include="Scripthook.h" />
+    <ClInclude Include="Invoker.h" />
     <ClInclude Include="natives.h" />
     <ClInclude Include="types.h" />
   </ItemGroup>

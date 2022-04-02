@@ -2,6 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Pools.cpp">
+      <Filter>Pools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="types.h">
@@ -10,19 +16,34 @@
     <ClInclude Include="natives.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="nativeCaller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="enums.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripthook.h">
+      <Filter>Scripthook</Filter>
+    </ClInclude>
+    <ClInclude Include="Invoker.h">
+      <Filter>Scripthook</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Pools.h">
+      <Filter>Pools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
       <UniqueIdentifier>{d43535a2-69a7-48fe-a92f-c1a7e03bed14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{ccd30f15-dce3-4dd7-8386-6b0630fd440f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripthook">
+      <UniqueIdentifier>{8837e21e-7397-4bb5-8dd3-e86d845b9215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pools">
+      <UniqueIdentifier>{6102619f-3d7c-46db-a5cf-690fcb5f7011}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

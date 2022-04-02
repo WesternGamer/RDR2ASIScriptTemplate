@@ -1,52 +1,89 @@
-#include "main.h"
+#pragma once
+
 #include <string>
 #include <vector>
+#include <iostream>
+#include <string>
 #include "natives.h"
 #include "enums.h"
 #include "types.h"
+#include "Keyboard.h"
+#include "Scripthook.h"
+#include "Pools.h"
 
-/// <summary>
-/// Main entry point of ASI script.
-/// </summary>
-/// <param name="hInstance">Handle to DLL module.</param>
-/// <param name="reason">Reason for calling function</param>
-/// <param name="lpReserved">Reserved.</param>
-/// <returns></returns>
-BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
+using namespace Keyboard;
+using namespace Pools;
+using namespace std;
+
+namespace RDR2ASIScriptTemplate 
 {
-	switch (reason)
+	/// <summary>
+    /// Called every game update.
+    /// </summary>
+	void Update()
 	{
-	case DLL_PROCESS_ATTACH:
-		scriptRegister(hInstance, Main);
-		break;
-	case DLL_PROCESS_DETACH:
-		Dispose();
-		scriptUnregister(hInstance);
-		break;
+		
 	}
-	return TRUE;
-}
 
-void Main() 
-{
-	
-#pragma region DoNotTouch
-	// Add your code above this code.
-	srand(GetTickCount64());
-	while (true)
+	/// <summary>
+	/// This function is triggered when the game closes or when you press Ctrl + R. Probably called when going online with Scripthook RDR2.
+	/// </summary>
+	void Dispose()
 	{
-		Update();
-		WAIT(0);
+
 	}
-#pragma endregion
+
+	/// <summary>
+	/// This function is triggered when you interact with the game for the first time after the world loads.
+	/// </summary>
+	void OnWorldLoad()
+	{
+		srand(GetTickCount());
+
+		// Put your code here.
+
+		while (true)
+		{
+			Update();
+			WAIT(0);
+		}
+	}
+
+	/// <summary>
+	/// This function is triggered when the game loads.
+	/// </summary>
+	void OnGameLoad()
+	{
+
+	}
+
+	/// <summary>
+	/// Main entry point of ASI script.
+	/// </summary>
+	/// <param name="hInstance">Handle to DLL module.</param>
+	/// <param name="reason">Reason for calling function.</param>
+	/// <param name="lpReserved">Reserved.</param>
+	/// <returns>True</returns>
+	BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
+	{
+		switch (reason)
+		{
+		case DLL_PROCESS_ATTACH:
+			OnGameLoad();
+			scriptRegister(hInstance, OnWorldLoad);
+			keyboardHandlerRegister(Keyboard::OnKeyboardMessage);
+			break;
+		case DLL_PROCESS_DETACH:
+			Dispose();
+			scriptUnregister(hInstance);
+			keyboardHandlerUnregister(Keyboard::OnKeyboardMessage);
+			break;
+		}
+		return true;
+	}
 }
 
-void Update() 
-{
-	
-}
 
-void Dispose() 
-{
 
-}
+
+
