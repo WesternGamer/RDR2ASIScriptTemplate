@@ -5,10 +5,6 @@
 namespace Pools
 {
 	const int ArraySize = 1024;
-	int VehicleCount;
-	int PedCount;
-	int ObjectCount;
-	int PickupCount;
 
 	Vehicle* GetAllVehicles() 
 	{

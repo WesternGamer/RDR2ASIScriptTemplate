@@ -8,22 +8,22 @@ namespace Pools
 	/// <summary>
 	/// Total count of vehicles in the world. Call GetAllVehicles() to update count.
 	/// </summary>
-	int VehicleCount;
+	static int VehicleCount;
 
 	/// <summary>
 	/// Total count of peds in the world. Call GetAllPeds() to update count.
 	/// </summary>
-	int PedCount;
+	static int PedCount;
 
 	/// <summary>
 	/// Total count of objects in the world. Call GetAllObjects() to update count.
 	/// </summary>
-	int ObjectCount;
+	static int ObjectCount;
 
 	/// <summary>
 	/// Total count of pickups in the world. Call GetAllPickups() to update count.
 	/// </summary>
-	int PickupCount;
+	static int PickupCount;
 	
 	/// <summary>
 	/// Easier way to get array of all vehicles in the world.
