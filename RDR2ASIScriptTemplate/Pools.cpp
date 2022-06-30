@@ -6,31 +6,31 @@ namespace Pools
 {
 	const int ArraySize = 1024;
 
-	Vehicle* GetAllVehicles() 
+	void GetAllVehicles()
 	{
-		Vehicle vehicles[ArraySize];
-		VehicleCount = worldGetAllVehicles(vehicles, ArraySize);
-		return vehicles;
+		VehicleCount = worldGetAllVehicles(AllVehicles, ArraySize);
 	}
 
-	Ped* GetAllPeds()
+	void GetAllPeds()
 	{
-		Ped peds[ArraySize];
-		PedCount = worldGetAllPeds(peds, ArraySize);
-		return peds;
+		PedCount = worldGetAllPeds(AllPeds, ArraySize);
 	}
 
-	Object* GetAllObjects()
+	void GetAllObjects()
 	{
-		Object objects[ArraySize];
-		ObjectCount = worldGetAllObjects(objects, ArraySize);
-		return objects;
+		ObjectCount = worldGetAllObjects(AllObjects, ArraySize);
 	}
 
-	Pickup* GetAllPickups() 
+	void GetAllPickups()
 	{
-		Pickup pickups[ArraySize];
-		PickupCount = worldGetAllPickups(pickups, ArraySize);
-		return pickups;
+		PickupCount = worldGetAllPickups(AllPickups, ArraySize);
+	}
+
+	void Update()
+	{
+		GetAllVehicles();
+		GetAllPeds();
+		GetAllObjects();
+		GetAllPickups();
 	}
 }

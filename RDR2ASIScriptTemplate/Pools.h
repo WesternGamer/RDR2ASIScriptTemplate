@@ -24,28 +24,14 @@ namespace Pools
 	/// Total count of pickups in the world. Call GetAllPickups() to update count.
 	/// </summary>
 	static int PickupCount;
-	
-	/// <summary>
-	/// Easier way to get array of all vehicles in the world.
-	/// </summary>
-	/// <returns>An array of vehicles.</returns>
-	Vehicle* GetAllVehicles();
 
-	/// <summary>
-	/// Easier way to get array of all peds in the world.
-	/// </summary>
-	/// <returns>An array of peds.</returns>
-	Ped* GetAllPeds();
+	static Ped AllVehicles[1024];
 
-	/// <summary>
-	/// Easier way to get array of all objects in the world.
-	/// </summary>
-	/// <returns>An array of objects.</returns>
-	Object* GetAllObjects();
+	static Ped AllPeds[1024];
 
-	/// <summary>
-	/// Easier way to get array of all pickups in the world.
-	/// </summary>
-	/// <returns>An array of pickups.</returns>
-	Pickup* GetAllPickups();
+	static Ped AllObjects[1024];
+
+	static Ped AllPickups[1024];
+
+	void Update();
 }

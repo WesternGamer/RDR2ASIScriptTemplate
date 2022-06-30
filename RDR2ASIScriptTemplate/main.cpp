@@ -22,7 +22,7 @@ namespace RDR2ASIScriptTemplate
     /// </summary>
 	void Update()
 	{
-		
+		Pools::Update();
 	}
 
 	/// <summary>
