@@ -69,6 +69,7 @@ namespace RDR2ASIScriptTemplate
 		switch (reason)
 		{
 		case DLL_PROCESS_ATTACH:
+			DisableThreadLibraryCalls(hInstance);
 			OnGameLoad();
 			scriptRegister(hInstance, OnWorldLoad);
 			keyboardHandlerRegister(Keyboard::OnKeyboardMessage);
