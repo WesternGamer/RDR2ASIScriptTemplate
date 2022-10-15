@@ -7,12 +7,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Hooking_Patterns.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pools.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enums.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Hooking.h" />
+    <ClInclude Include="Hooking_Patterns.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Pools.h" />
     <ClInclude Include="Scripthook.h" />
@@ -37,8 +41,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -49,6 +52,10 @@
     <OutDir>D:\Games\steamapps\common\Red Dead Redemption 2</OutDir>
     <IntDir>temp\$(Configuration)\</IntDir>
     <TargetExt>.asi</TargetExt>
+    <ExtensionsToDeleteOnClean>
+    </ExtensionsToDeleteOnClean>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -62,6 +69,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FloatingPointModel>Fast</FloatingPointModel>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -76,6 +84,5 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

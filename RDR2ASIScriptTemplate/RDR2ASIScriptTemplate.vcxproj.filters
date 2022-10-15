@@ -8,6 +8,7 @@
     <ClCompile Include="Pools.cpp">
       <Filter>Pools</Filter>
     </ClCompile>
+    <ClCompile Include="Hooking_Patterns.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="types.h">
@@ -31,6 +32,9 @@
     <ClInclude Include="Pools.h">
       <Filter>Pools</Filter>
     </ClInclude>
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Hooking.h" />
+    <ClInclude Include="Hooking_Patterns.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

@@ -36,6 +36,7 @@
 	{ 
 		scriptWait(time); 
 	}
+
 	static void TERMINATE() 
 	{ 
 		WAIT(MAXDWORD); 
